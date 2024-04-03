@@ -7,11 +7,7 @@ const ingredients = [
   'Condiments',
 ];
 
-const ulIngredients = document.getElementById("ingredients");
+const liElements = ingredients.map(ingredient => `<li class="item">${ingredient}</li>`).join('');
 
-ingredients.forEach(ingredient => {
-  const li = document.createElement("li");
-  li.textContent = ingredient;
-  li.classList.add("item");
-  ulIngredients.appendChild(li);
-});
+
+document.getElementById('ingredients').innerHTML = liElements;  // Umieszczanie wszystkich elementów <li> wewnątrz listy <ul>
